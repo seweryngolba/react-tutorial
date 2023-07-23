@@ -1,35 +1,19 @@
 import "./App.css";
-import User from "./User";
+import { useState } from "react";
 
 function App() {
-  const planets = [
-    {
-      name: "Mars",
-      isGasPlanet: false,
-    },
-    {
-      name: "Earth",
-      isGasPlanet: false,
-    },
-    {
-      name: "Jupiter",
-      isGasPlanet: true,
-    },
-    {
-      name: "Venus",
-      isGasPlanet: false,
-    },
-    {
-      name: "Neptune",
-      isGasPlanet: true,
-    },
-  ];
+  const [textColor, setTextColor] = useState("black");
 
   return (
     <div className="App">
-      {planets.map(
-        (planet, key) => !planet.isGasPlanet && <h1>{planet.name}</h1>
-      )}
+      <button
+        onClick={() => {
+          setTextColor(textColor === "black" ? "red" : "black");
+        }}
+      >
+        Show/Hide
+      </button>
+      <h1 style={{ color: textColor }}>HI World</h1>
     </div>
   );
 }

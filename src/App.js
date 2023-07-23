@@ -1,6 +1,7 @@
 import "./App.css";
 import { useState } from "react";
 import Task from "./Task";
+import Text from "./Text";
 
 function App() {
   const [todoList, setTodoList] = useState([]);
@@ -56,6 +57,7 @@ function App() {
             />
           );
         })}
+        <Text />
       </div>
     </div>
   );
